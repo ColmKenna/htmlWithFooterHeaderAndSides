@@ -1,0 +1,199 @@
+.page-header{
+    background-color: blueviolet;
+}
+
+body{margin: 0;}
+.page-header>h1 {
+    font-size: 1.8em;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+}
+
+.content-navigation{
+    background-color: aqua;
+}
+.content-article{
+    background-color: antiquewhite;}
+.content-sidebar{
+    background-color: brown;
+}
+.page-footer{
+    background-color: chartreuse;
+}
+
+.page-footer>h1{
+    margin: 0;
+}
+
+.page-content{
+    display: flex;
+}
+
+.content-article{
+    flex-grow: 5;
+}
+
+.page-header{    height: 10vh;}
+.page-content{height: 80vh;}
+.page-footer{height: 10vh;}
+.content-article {
+    overflow-y: scroll;
+    overflow-x: auto;
+  /*  padding: 1rem;*/
+}
+.content-sidebar{
+    overflow-y: scroll;
+    overflow-x: auto;
+}
+
+.content-sidebar, .content-navigation{
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.sidebar-contents-container{
+    padding: 0.5rem;
+}
+
+.expand-buttons-holder{
+    display: none;
+}
+
+
+.content-sidebar-hide{
+    flex-basis: 0rem;
+    transition: flex-basis 0.5s ease-in;
+    overflow: hidden;
+    flex-shrink: 0 ;
+}
+
+.content-sidebar-show{
+    flex-basis: 10rem;
+    transition: flex-basis 0.5s ease-in;
+    flex-shrink: 0 ;
+}
+
+
+
+
+.fa-top-icon{
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+}
+.fa-icon-right{
+    float: right;
+}
+
+.content-article>.expand-buttons-holder{
+    position: fixed;
+    top: 10vh;
+}
+
+.top-left{
+    position: relative;
+    top:0;
+    left:0;
+}
+
+.content-article{
+    display: flex;
+}
+
+.show-aside-hide{
+    flex-basis: 0rem;
+    transition: flex-basis 0.5s ease-in;
+    overflow: hidden;
+    flex-shrink: 0 ;
+}
+.show-aside-show{
+    flex-basis: 1.5rem;
+    transition: flex-basis 0.5s ease-in;
+    overflow: hidden;
+
+    flex-shrink: 0 ;
+}
+
+@media only screen and (max-width: 720px) {
+    .page-content{
+        display: flex;
+        flex-flow: column;
+    }
+
+    .page-content{height: fit-content ;}
+
+    .content-article{
+        order: 3;}
+    /*remove the next two rules to unset footer sticyness
+    .content-article{
+        padding-bottom: 10vh;
+        overflow: auto;
+    }
+
+    .page-footer{
+        position: fixed;
+        width: 100%;
+        bottom : 0vh;
+    }*/
+    .content-navigation{
+        flex-basis: 0rem;
+        height: 0px;
+        transition: flex-basis 0.5s ease-in;
+        order: 0;
+    }
+
+
+
+
+    .expand-buttons-holder{
+        display: flex;
+    }
+    .expand-buttons-holder > button {
+        flex-grow: 1;
+    }
+
+
+
+
+    .content-sidebar{
+        flex-basis: 0rem;
+        height: 0px;
+        transition: flex-basis 0.5s ease-in;
+        order: 1;
+        overflow: hidden;
+        padding: 0;
+
+    }
+
+    .content-navigation.content-sidebar-show-md{
+        flex-basis: 30rem;
+    }
+
+    .content-sidebar-show-md{
+        flex-basis: 20rem;
+        transition: flex-basis 0.5s ease-in;
+        overflow-y: auto;
+    }
+
+    .content-sidebar-hide-md{
+        flex-basis: 0rem;
+        transition:  flex-basis 0.5s ease-in;
+        overflow: hidden;
+
+    }
+
+    #aside-close, #show-aside-large-screen, #navbar-show-largescreen, #nav-close{
+        display: none;
+    }
+
+    #show-footer-button{
+        background-color: brown;
+        border: 0;
+
+    }
+    #show-nav-button{
+        background-color: aqua;
+        border: 0;}
+
+
+}
